@@ -1,1 +1,1 @@
-# App de lista de teras 
+# App de lista de tarefas
