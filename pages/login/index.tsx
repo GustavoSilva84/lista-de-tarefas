@@ -1,27 +1,48 @@
 import { useRef } from "react";
-import { Text, View, Button, TextInput } from 'react-native';
 import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 
+import { 
+  Text, 
+  TextInput
+} from 'react-native';
+
+import { 
+  Input, 
+  Label, 
+  Icon,
+  Form,
+  ButtonBlack, 
+  TextButtonBlack,
+  ButtonTransparent,
+  TextButtonTransparent
+} from "../../components/StandardComponents";
+
+import { View } from "./style";
 
 export default function Login({ navigation }: NativeStackHeaderProps) {
 
-  const RefInputEmail = useRef<HTMLInputElement>();
-  const RefInputPassword = useRef<HTMLInputElement>();
+  const RefInputEmail = useRef<TextInput>(null);
+  const RefInputPassword = useRef<TextInput>(null);
 
   return (  
     <View>
-      <Text> Login </Text>
+      <Icon source={require("../../assets/myIcon.png")}/>
 
-      <Text onPress={() => RefInputEmail?.current?.focus()}> E-Mail </Text>
-      <TextInput ref={RefInputEmail || null} style={{ borderWidth: 1, marginBottom: 5 }}/>
+      <Form>
+        <Label onPress={() => RefInputEmail?.current?.focus()}> E-Mail </Label>
+        <Input ref={RefInputEmail}/>
 
-      <Text onPress={() => RefInputPassword?.current?.focus()}> E-Mail </Text>
-      <TextInput ref={RefInputPassword} style={{ borderWidth: 1, marginBottom: 5 }}/>
+        <Label onPress={() => RefInputPassword?.current?.focus()}> E-Mail </Label>
+        <Input ref={RefInputPassword}/>
 
-      <Button
-        title="Create an account"
-        onPress={() => navigation.navigate("createAccount")}
-      />
+        <ButtonBlack onPress={() => navigation.navigate("createAccount")}> 
+          <TextButtonBlack> Logar </TextButtonBlack>
+        </ButtonBlack>
+
+        <ButtonTransparent onPress={() => navigation.navigate("createAccount")}> 
+          <TextButtonTransparent> Criar conta </TextButtonTransparent>
+        </ButtonTransparent>
+      </Form>
     </View>
   )
 
