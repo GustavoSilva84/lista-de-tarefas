@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 
 import { 
-  Text, 
+  Vibration, 
   TextInput
 } from 'react-native';
 
@@ -23,19 +23,50 @@ export default function Login({ navigation }: NativeStackHeaderProps) {
 
   const RefInputEmail = useRef<TextInput>(null);
   const RefInputPassword = useRef<TextInput>(null);
+  const [valueEmail, setValueEmail] = useState<string>("");
+  const [valuePassword, setValuePassword]  = useState<string>("");
 
+  useEffect(() => {
+
+    if(valueEmail) {
+      RefInputEmail?.current?.setNativeProps({ borderWidth: 0 });
+    }
+
+    if(valuePassword) {
+      RefInputPassword?.current?.setNativeProps({ borderWidth: 0 });
+    }
+
+  }, [valueEmail, valuePassword])
+
+  function logInto() {
+
+    if(!valueEmail?.trim()) {
+      RefInputEmail?.current?.setNativeProps({ borderWidth: 1 });
+      RefInputEmail?.current?.focus();
+      Vibration.vibrate(200, true);
+      return
+    }
+
+    if(!valuePassword?.trim()) {
+      RefInputPassword?.current?.setNativeProps({ borderWidth: 1 });
+      RefInputPassword?.current?.focus();
+      Vibration.vibrate(200, true);
+      return
+    }
+
+  }
   return (  
     <View>
       <Icon source={require("../../assets/myIcon.png")}/>
 
       <Form>
         <Label onPress={() => RefInputEmail?.current?.focus()}> E-Mail </Label>
-        <Input ref={RefInputEmail}/>
+        <Input onChangeText={value => setValueEmail(value)} ref={RefInputEmail}/>
 
-        <Label onPress={() => RefInputPassword?.current?.focus()}> E-Mail </Label>
-        <Input ref={RefInputPassword}/>
+        <Label onPress={() => RefInputPassword?.current?.focus()}> Senha </Label>
+        <Input  onChangeText={value => setValuePassword(value)} ref={RefInputPassword}/>
 
-        <ButtonBlack onPress={() => navigation.navigate("createAccount")}> 
+        <ButtonBlack onPress={() => logInto()}> 
           <TextButtonBlack>  Criar conta </TextButtonBlack>
         </ButtonBlack>
 

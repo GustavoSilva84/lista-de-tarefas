@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 export const Icon = styled.Image`
-  margin: 50px 0;
+  margin: 100px 0 50px 0;
 `
 
 export const Form = styled.View`
@@ -19,6 +19,8 @@ export const Input = styled.TextInput`
   background-color: #F3F3F3;
   width: 100%;
   padding: 0 20px;
+  border-radius: 3px;
+  border-color: red;
 `
 
 export const ButtonBlack = styled.TouchableOpacity`
