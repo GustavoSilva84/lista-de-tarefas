@@ -11,22 +11,17 @@ export const ListTask = styled.ScrollView`
 `
 
 export const CardTask = styled.View`
-  /* height:; */
   width: 100%;
   display: flex;
   flex-direction: row;
   `
 
 export const DescriptionCardTask = styled.Text`
-  background-color: #EFEFEF;
+  background-color: #f8f8f8;
   padding: 15px;
   width: 100%;
   margin: 0 0 10px 0;
   border-radius: 5px;
-`
-
-export const DateCardTask = styled.Text`
-  margin-top: 15px;
 `
 
 export const LineCardTask = styled.View`
@@ -34,13 +29,18 @@ export const LineCardTask = styled.View`
   width: 5px;
   margin: 0 15px;
   background-color: #EFEFEF;
-  /* border-radius: 5px; */
   align-items: center;
 `
-export const BollLine = styled.View`
+export const BollLine = styled.TouchableOpacity`
+  width: 40px;
+  height: 40px;
+  background-color: #EFEFEF;
+  border-radius: 20px;
+  margin: 5px 15px 0 0;
+  align-items: center;
+  justify-content: center;
+`
+export const Image = styled.Image`
   width: 15px;
   height: 15px;
-  background-color: #EFEFEF;
-  border-radius: 10px;
-  margin-top: 19px;
 `

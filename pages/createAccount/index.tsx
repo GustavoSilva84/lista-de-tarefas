@@ -15,7 +15,7 @@ import {
   TextButtonBlack,
   ButtonTransparent,
   TextButtonTransparent
-} from "../../components/StandardComponents";
+} from "./../../styles/StandardComponents";
 
 import { View } from "./style";
 

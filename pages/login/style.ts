@@ -5,5 +5,6 @@ export const View = styled.View`
   display: flex;
   padding: 0 10px;
   align-items: center;
+  background-color: white
 `
 
