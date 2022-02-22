@@ -1,29 +1,29 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add @types/styled-components/native
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add @types/styled-components-native
 
 PATH: 
-  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/gustavodev/.dotnet/tools:/usr/local/go/bin:/home/gustavodev/go/bin:/usr/local/go/bin:/home/gustavodev/.dotnet/tools:/usr/local/go/bin
+  /home/gustavodev/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/gustavodev/.dotnet/tools:/usr/local/go/bin:/home/gustavodev/go/bin:/usr/local/go/bin
 
 Yarn version: 
   1.22.17
 
 Node version: 
-  16.13.1
+  16.14.0
 
 Platform: 
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fstyled-components/native: Request "https://registry.yarnpkg.com/@types%2fstyled-components/native" returned a 405
-      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:67038:18)
+  Error: https://registry.yarnpkg.com/@types%2fstyled-components-native: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:67029:18)
       at Request.self.callback (/usr/share/yarn/lib/cli.js:140883:22)
-      at Request.emit (node:events:390:28)
+      at Request.emit (node:events:520:28)
       at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141855:10)
-      at Request.emit (node:events:390:28)
+      at Request.emit (node:events:520:28)
       at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141777:12)
-      at Object.onceWrapper (node:events:509:28)
-      at IncomingMessage.emit (node:events:402:35)
-      at endReadableNT (node:internal/streams/readable:1343:12)
+      at Object.onceWrapper (node:events:639:28)
+      at IncomingMessage.emit (node:events:532:35)
+      at endReadableNT (node:internal/streams/readable:1346:12)
       at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
 npm manifest: 
@@ -56,7 +56,7 @@ npm manifest:
       "@babel/core": "^7.12.9",
       "@types/react": "~17.0.21",
       "@types/react-native": "~0.64.12",
-      "@types/styled-components": "^5.1.22",
+      "@types/styled-components": "^5.1.23",
       "babel-plugin-react-native-classname-to-style": "^1.2.2",
       "babel-plugin-react-native-platform-specific-extensions": "^1.1.1",
       "sass": "^1.49.7",
@@ -1677,10 +1677,10 @@ Lockfile:
     resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz"
     integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
   
-  "@types/styled-components@^5.1.22":
-    version "5.1.22"
-    resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.22.tgz#ee6206582d3da11fa2f9951e858aefebee37ff20"
-    integrity sha512-zQzf/0aGtgFDjB942f8IaKA6UilFziDza9wXkAX5mpiSWA/FBZBU6yUavvczulTvoR6759h6CH8HuuIcJDBgZA==
+  "@types/styled-components@^5.1.23":
+    version "5.1.23"
+    resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.23.tgz#11e5740047f292b42a042c60c0ef16b58d5adef6"
+    integrity sha512-zt8oQGU6XB4LH1Xpq169YnAVmt22+swzHJvyKMyTZu/z8+afvgKjjg0s79aAodgNSf36ZOEG6DyVAW/JhLH2Nw==
     dependencies:
       "@types/hoist-non-react-statics" "*"
       "@types/react" "*"

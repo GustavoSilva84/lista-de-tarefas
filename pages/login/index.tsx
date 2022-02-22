@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 
+import { View } from "./style";
+
 import { 
-  Vibration, 
-  TextInput
+  TextInput,
 } from 'react-native';
 
 import { 
@@ -17,7 +18,6 @@ import {
   TextButtonTransparent
 } from "../../components/StandardComponents";
 
-import { View } from "./style";
 
 export default function Login({ navigation }: NativeStackHeaderProps) {
 
@@ -36,23 +36,25 @@ export default function Login({ navigation }: NativeStackHeaderProps) {
       RefInputPassword?.current?.setNativeProps({ borderWidth: 0 });
     }
 
-  }, [valueEmail, valuePassword])
-
+  }, [valueEmail, valuePassword]);
+ 
   function logInto() {
 
-    if(!valueEmail?.trim()) {
-      RefInputEmail?.current?.setNativeProps({ borderWidth: 1 });
-      RefInputEmail?.current?.focus();
-      Vibration.vibrate(200, true);
-      return
-    }
+    // if(!valueEmail?.trim()) {
+    //   RefInputEmail?.current?.setNativeProps({ borderWidth: 1 });
+    //   RefInputEmail?.current?.focus();
+    //   Vibration.vibrate(200, true);
+    //   return
+    // }
 
-    if(!valuePassword?.trim()) {
-      RefInputPassword?.current?.setNativeProps({ borderWidth: 1 });
-      RefInputPassword?.current?.focus();
-      Vibration.vibrate(200, true);
-      return
-    }
+    // if(!valuePassword?.trim()) {
+    //   RefInputPassword?.current?.setNativeProps({ borderWidth: 1 });
+    //   RefInputPassword?.current?.focus();
+    //   Vibration.vibrate(200, true);
+    //   return
+    // }
+
+    navigation.navigate("home");
 
   }
 
@@ -62,10 +64,10 @@ export default function Login({ navigation }: NativeStackHeaderProps) {
 
       <Form>
         <Label onPress={() => RefInputEmail?.current?.focus()}> E-Mail </Label>
-        <Input onChangeText={value => setValueEmail(value)} ref={RefInputEmail}/>
+        <Input onChangeText={(value: string) => setValueEmail(value)} ref={RefInputEmail}/>
 
         <Label onPress={() => RefInputPassword?.current?.focus()}> Senha </Label>
-        <Input onChangeText={value => setValuePassword(value)} ref={RefInputPassword}/>
+        <Input onChangeText={(value: string) => setValuePassword(value)} ref={RefInputPassword}/>
 
         <ButtonBlack onPress={() => logInto()}> 
           <TextButtonBlack> Logar </TextButtonBlack>

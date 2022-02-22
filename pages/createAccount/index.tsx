@@ -54,6 +54,8 @@ export default function Login({ navigation }: NativeStackHeaderProps) {
       return
     }
 
+    navigation.navigate("home");
+
   }
   return (  
     <View>
@@ -61,10 +63,10 @@ export default function Login({ navigation }: NativeStackHeaderProps) {
 
       <Form>
         <Label onPress={() => RefInputEmail?.current?.focus()}> E-Mail </Label>
-        <Input onChangeText={value => setValueEmail(value)} ref={RefInputEmail}/>
+        <Input onChangeText={(value: string) => setValueEmail(value)} ref={RefInputEmail}/>
 
         <Label onPress={() => RefInputPassword?.current?.focus()}> Senha </Label>
-        <Input  onChangeText={value => setValuePassword(value)} ref={RefInputPassword}/>
+        <Input  onChangeText={(value: string) => setValuePassword(value)} ref={RefInputPassword}/>
 
         <ButtonBlack onPress={() => logInto()}> 
           <TextButtonBlack>  Criar conta </TextButtonBlack>
