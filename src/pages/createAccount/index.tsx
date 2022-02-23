@@ -15,7 +15,7 @@ import {
   TextButtonBlack,
   ButtonTransparent,
   TextButtonTransparent
-} from "./../../styles/StandardComponents";
+} from "../../styles/Formulario";
 
 import { View } from "./style";
 

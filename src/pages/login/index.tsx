@@ -16,7 +16,7 @@ import {
   TextButtonBlack,
   ButtonTransparent,
   TextButtonTransparent
-} from "./../../styles/StandardComponents";
+} from "../../styles/Formulario";
 
 export default function Login({ navigation }: NativeStackHeaderProps) {
 
